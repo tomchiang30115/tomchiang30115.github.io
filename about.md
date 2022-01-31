@@ -6,19 +6,27 @@ mathjax: false
 permalink: /about/
 ---
 
+<!---
+change contentid, content url, and metadata name.
+-->
+
 <div id="adobe-dc-view" style="width: 100%;"></div>
 <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
 <script type="text/javascript">
 	document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
-		var adobeDCView = new AdobeDC.View({clientId: "75c0126e67ed437d8268ece13f6e2b7f", divId: "adobe-dc-view"});
+		var adobeDCView = new AdobeDC.View({clientId: "3e66a9482764407187a81a0bf601400a", divId: "adobe-dc-view"});
 		adobeDCView.previewFile({
-			content:{location: {url: "https://sourestdeeds.github.io/pdf/stephen-charles-cv.pdf"}},
-			metaData:{fileName: "stephen-charles-cv.pdf"}
+			content:{location: {url: "https://tomchiang30115.github.io/pdf/Thomas-Chiang-CV-v5.0.pdf"}},
+			metaData:{fileName: "Thomas-Chiang-CV-v5.0.pdf"}
 		}, {embedMode: "IN_LINE"});
 	});
 </script>
 
 ### Certificates
+
+<!---
+change dir in certificates
+-->
 
 {% include image-gallery-rect.html folder="certificates/datacamp" %}
 
@@ -41,4 +49,4 @@ My most recent foray into applying programming language is in the field of *Astr
 
 ### Instagram
 
-{% include instagram.html username="sourestdeeds" %}
+{% include instagram.html username="ihsiu_chiang" %}
