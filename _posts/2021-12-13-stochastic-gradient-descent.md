@@ -30,7 +30,7 @@ A common loss function for regression problems is the **mean absolute error** or
 
 The total MAE loss on a dataset is the mean of all these absolute differences.
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-13-stochastic-gradient-descent/1.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-13-stochastic-gradient-descent/1.png)<center><b>Figure 1:</b> The mean absolute error is the average length between the fitted curve and the data points.</center><br> 
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-13-stochastic-gradient-descent/1.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-13-stochastic-gradient-descent/1.png)<center><b>Figure 1:</b> The mean absolute error is the average length between the fitted curve and the data points.</center><br> 
 
 Besides MAE, other loss functions you might see for regression problems are the mean-squared error (MSE) or the Huber loss (both available in Keras).
 
@@ -48,7 +48,7 @@ Virtually all of the optimization algorithms used in deep learning belong to a f
 
 Then just do this over and over until the loss is as small as you like (or until it won't decrease any further.)
 
-[![gif](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-13-stochastic-gradient-descent/2.gif#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-13-stochastic-gradient-descent/2.gif)<center><b>Figure 2:</b> Training a neural network with Stochastic Gradient Descent.</center><br> 
+[![gif](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-13-stochastic-gradient-descent/2.gif#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-13-stochastic-gradient-descent/2.gif)<center><b>Figure 2:</b> Training a neural network with Stochastic Gradient Descent.</center><br> 
 
 Each iteration's sample of training data is called a **minibatch** (or often just "batch"), while a complete round of the training data is called an **epoch**. The number of epochs you train for is how many times the network will see each training example.
 
@@ -203,7 +203,7 @@ history_df = pd.DataFrame(history.history)
 history_df['loss'].plot();
 ```
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-13-stochastic-gradient-descent/3.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-13-stochastic-gradient-descent/3.png)
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-13-stochastic-gradient-descent/3.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-13-stochastic-gradient-descent/3.png)
 
 Notice how the loss levels off as the epochs go by. When the loss curve becomes horizontal like that, it means the model has learned all it can and there would be no reason continue for additional epochs.
 

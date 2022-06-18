@@ -28,7 +28,7 @@ Permutation importance uses models differently than anything you've seen so far,
 Consider data with the following format:
 
 <br>
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-08-permutation-importance/1.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-08-permutation-importance/1.png)<br>
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-08-permutation-importance/1.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-08-permutation-importance/1.png)<br>
 
 We want to predict a person's height when they become 20 years old, using data that is available at age 10.
 
@@ -39,7 +39,7 @@ Permutation importance is calculated after a model has been fitted. So we won't 
 Instead we will ask the following question: If I randomly shuffle a single column of the validation data, leaving the target and all other columns in place, how would that affect the accuracy of predictions in that now-shuffled data?
 
 <br>
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-08-permutation-importance/2.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-08-permutation-importance/2.png)<br>
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-08-permutation-importance/2.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-08-permutation-importance/2.png)<br>
 
 Randomly re-ordering a single column should cause less accurate predictions, since the resulting data no longer corresponds to anything observed in the real world. Model accuracy especially suffers if we shuffle a column that the model relied on heavily for predictions. In this case, shuffling *height at age 10* would cause terrible predictions. If we shuffled *socks* owned instead, the resulting predictions wouldn't suffer nearly as much.
 

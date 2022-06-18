@@ -7,7 +7,7 @@ categories: [Python Snippets]
 permalink: /blog/:title/
 ---
 {% assign counter = 1 %}
-{% assign link = "https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/" %}
+{% assign link = "https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/" %}
 {% assign date = page.date | date: "%Y-%m-%d" %}
 {% assign filename = page.title | remove: " -" | replace: " ", "-" | downcase %}
 

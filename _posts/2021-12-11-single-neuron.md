@@ -27,7 +27,7 @@ Through their power and scalability **neural networks** have become the defining
 
 So let's begin with the fundamental component of a neural network: the individual neuron. As a diagram, a **neuron** (or **unit**) with one input looks like:
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-11-single-neuron/1.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-11-single-neuron/1.png)<center><b>Figure 1:</b> The Linear Unit.</center><br> 
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-11-single-neuron/1.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-11-single-neuron/1.png)<center><b>Figure 1:</b> The Linear Unit.</center><br> 
 
 The input is \\( x \\). Its connection to the neuron has a weight which is \\( w \\). Whenever a value flows through a connection, you multiply the value by the connection's weight. For the input \\( x \\), what reaches the neuron is \\( w \times x \\). A neural network "learns" by modifying its weights.
 
@@ -42,7 +42,7 @@ Though individual neurons will usually only function as part of a larger network
 
 Let's think about how this might work on a dataset like [80 Cereals](https://www.kaggle.com/crawford/80-cereals). Training a model with 'sugars' (grams of sugars per serving) as input and 'calories' (calories per serving) as output, we might find the bias is \\( b=90 \\) and the weight is \\( w=2.5 \\). We could estimate the calorie content of a cereal with 5 grams of sugar per serving like this:
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-11-single-neuron/2.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-11-single-neuron/2.png)<center><b>Figure 2:</b> Computing with the linear unit.</center><br> 
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-11-single-neuron/2.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-11-single-neuron/2.png)<center><b>Figure 2:</b> Computing with the linear unit.</center><br> 
 
 And, checking against our formula, we have calories \\( =2.5\times5+90=102.5 \\), just like we expect.
 
@@ -50,7 +50,7 @@ And, checking against our formula, we have calories \\( =2.5\times5+90=102.5 \\)
 
 The *80 Cereals* dataset has many more features than just 'sugars'. What if we wanted to expand our model to include things like fiber or protein content? That's easy enough. We can just add more input connections to the neuron, one for each additional feature. To find the output, we would multiply each input to its connection weight and then add them all together.
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-11-single-neuron/3.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-11-single-neuron/3.png)<center><b>Figure 3:</b> A linear unit with three inputs.</center><br> 
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-11-single-neuron/3.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-11-single-neuron/3.png)<center><b>Figure 3:</b> A linear unit with three inputs.</center><br> 
 
 The formula for this neuron would be \\( y = w_0 x_0 + w_1 x_1 + w_2 x_2 + b \\). A linear unit with two inputs will fit a plane, and a unit with more inputs than that will fit a hyperplane.
 

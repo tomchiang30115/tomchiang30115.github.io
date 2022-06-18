@@ -28,7 +28,7 @@ Mutual information describes relationships in terms of uncertainty. The mutual i
 
 Here's an example from the Ames Housing data. The figure shows the relationship between the exterior quality of a house and the price it sold for. Each point represents a house.
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-01-mutual-information/1.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-01-mutual-information/1.png)
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-01-mutual-information/1.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-01-mutual-information/1.png)
 <center><b>Figure 1:</b> Knowing the exterior quality of a house reduces uncertainty about its sale price.</center><br> 
 
 From the figure, we can see that knowing the value of *ExterQual* should make you more certain about the corresponding *SalePrice* -- each category of ExterQual tends to concentrate *SalePrice* to within a certain range. The mutual information that *ExterQual* has with *SalePrice* is the average reduction of uncertainty in *SalePrice* taken over the four values of ExterQual. Since Fair occurs less often than Typical, for instance, Fair gets less weight in the MI score.
@@ -41,7 +41,7 @@ The least possible mutual information between quantities is 0.0. When MI is zero
 
 The next figure will give you an idea of how MI values correspond to the kind and degree of association a feature has with the target.
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-01-mutual-information/1.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-01-mutual-information/1.png)
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-01-mutual-information/1.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-01-mutual-information/1.png)
 <center><b>Figure 2:</b><br> <b>Left</b>: Mutual information increases as the dependence between feature and target becomes tighter. <b>Right</b>: Mutual information can capture any kind of association (not just linear, like correlation).</center><br> 
 
 Here are some things to remember when applying mutual information:
@@ -137,7 +137,7 @@ plt.figure(dpi=100, figsize=(8, 5))
 plot_mi_scores(mi_scores)
 ```
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-01-mutual-information/3.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-01-mutual-information/3.png)
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-01-mutual-information/3.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-01-mutual-information/3.png)
 <center><b>Figure 3:</b> The high-scoring curb weight feature exhibits a strong relationship with price, the target.</center><br> 
 
 Data visualization is a great follow-up to a utility ranking. Let's take a closer look at a couple of these.
@@ -148,7 +148,7 @@ As we might expect, the high-scoring *curb_weight* feature exhibits a strong rel
 sns.relplot(x="curb_weight", y="price", data=df);
 ```
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-01-mutual-information/4.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-01-mutual-information/4.png)
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-01-mutual-information/4.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-01-mutual-information/4.png)
 <center><b>Figure 4:</b> Two price populations separates with different trends within the horsepower feature.</center><br>
 
 The *fuel_type* feature has a fairly low MI score, but as we can see from the figure, it clearly separates two price populations with different trends within the *horsepower* feature. This indicates that *fuel_type* contributes an interaction effect and might not be unimportant after all. Before deciding a feature is unimportant from its MI score, it's good to investigate any possible interaction effects -- domain knowledge can offer a lot of guidance here.
@@ -157,5 +157,5 @@ The *fuel_type* feature has a fairly low MI score, but as we can see from the fi
 sns.lmplot(x="horsepower", y="price", hue="fuel_type", data=df);5
 ```
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-01-mutual-information/5.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-01-mutual-information/5.png)
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-01-mutual-information/5.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-01-mutual-information/5.png)
 <center><b>Figure 5:</b> Domain knowledge for the fuel types of gas and diesel.</center><br>

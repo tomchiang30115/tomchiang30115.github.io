@@ -35,7 +35,7 @@ While our focus will be on image classification, what you'll learn in this cours
 A convnet used for image classification consists of two parts: a **convolutional base** and a **dense head**.
 
 <br>
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-17-convolutional-classifier/1.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-17-convolutional-classifier/1.png)<br>
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-17-convolutional-classifier/1.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-17-convolutional-classifier/1.png)<br>
 
 
 The base is used to **extract the features** from an image. It is formed primarily of layers performing the convolution operation, but often includes other kinds of layers as well. 
@@ -47,7 +47,7 @@ What do we mean by visual feature? A feature could be a line, a color, a texture
 The whole process goes something like this:
 
 <br>
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-17-convolutional-classifier/2.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-17-convolutional-classifier/2.png)<br>
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-17-convolutional-classifier/2.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-17-convolutional-classifier/2.png)<br>
 
 The features actually extracted look a bit different, but it gives the idea.
 
@@ -61,7 +61,7 @@ The goal of the network during training is to learn two things:
 These days, convnets are rarely trained from scratch. More often, we reuse the base of a pretrained model. To the pretrained base we then attach an untrained head. In other words, we reuse the part of a network that has already learned to do 1. Extract features, and attach to it some fresh layers to learn 2. Classify.
 
 <br>
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-17-convolutional-classifier/3.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-17-convolutional-classifier/3.png)<br>
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-17-convolutional-classifier/3.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-17-convolutional-classifier/3.png)<br>
 
 
 ### Example - Train a Convnet Classifier
@@ -212,9 +212,9 @@ history_frame.loc[:, ['loss', 'val_loss']].plot()
 history_frame.loc[:, ['binary_accuracy', 'val_binary_accuracy']].plot();
 ```
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-17-convolutional-classifier/4.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-17-convolutional-classifier/4.png)<br>
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-17-convolutional-classifier/4.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-17-convolutional-classifier/4.png)<br>
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-17-convolutional-classifier/5.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-17-convolutional-classifier/5.png)<br>
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-17-convolutional-classifier/5.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-17-convolutional-classifier/5.png)<br>
 
 ### Conclusion
 
@@ -323,7 +323,7 @@ When doing transfer learning, it's generally not a good idea to retrain the enti
 Now that the base is defined to do the feature extraction, create a head of *Dense* layers to perform the classification, following this diagram:
 
 <br>
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-17-convolutional-classifier/6.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-17-convolutional-classifier/6.png)<br>
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-17-convolutional-classifier/6.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-17-convolutional-classifier/6.png)<br>
 
 
 ```python
@@ -373,9 +373,9 @@ history_frame.loc[:, ['binary_accuracy', 'val_binary_accuracy']].plot();
 ```
 
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-17-convolutional-classifier/7.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-17-convolutional-classifier/7.png)<br>
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-17-convolutional-classifier/7.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-17-convolutional-classifier/7.png)<br>
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-17-convolutional-classifier/8.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-17-convolutional-classifier/8.png)<br>
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-17-convolutional-classifier/8.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-17-convolutional-classifier/8.png)<br>
 
 ### Examine Loss and Accuracy
 

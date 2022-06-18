@@ -19,13 +19,13 @@ We train a model by choosing weights or parameters that minimize the loss on a t
 
 When we train a model we've been plotting the loss on the training set epoch by epoch. To this we'll add a plot the validation data too. These plots we call the **learning curves**. To train deep learning models effectively, we need to be able to interpret them.
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-14-overfitting-and-underfitting/1.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-14-overfitting-and-underfitting/1.png)<center><b>Figure 1:</b> The validation loss gives an estimate of the expected error on unseen data.</center><br> 
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-14-overfitting-and-underfitting/1.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-14-overfitting-and-underfitting/1.png)<center><b>Figure 1:</b> The validation loss gives an estimate of the expected error on unseen data.</center><br> 
 
 Now, the training loss will go down either when the model learns signal or when it learns noise. But the validation loss will go down only when the model learns signal. (Whatever noise the model learned from the training set won't generalize to new data.) So, when a model learns signal both curves go down, but when it learns noise a gap is created in the curves. The size of the gap tells you how much noise the model has learned.
 
 Ideally, we would create models that learn all of the signal and none of the noise. This will practically never happen. Instead we make a trade. We can get the model to learn more signal at the cost of learning more noise. So long as the trade is in our favor, the validation loss will continue to decrease. After a certain point, however, the trade can turn against us, the cost exceeds the benefit, and the validation loss begins to rise.
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-14-overfitting-and-underfitting/2.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-14-overfitting-and-underfitting/2.png)<center><b>Figure 2:</b> Underfitting and overfitting.</center><br> 
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-14-overfitting-and-underfitting/2.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-14-overfitting-and-underfitting/2.png)<center><b>Figure 2:</b> Underfitting and overfitting.</center><br> 
 
 This trade-off indicates that there can be two problems that occur when training a model: not enough signal or too much noise. **Underfitting** the training set is when the loss is not as low as it could be because the model hasn't learned enough signal. **Overfitting** the training set is when the loss is not as low as it could be because the model learned too much noise. The trick to training deep learning models is finding the best balance between the two.
 
@@ -60,7 +60,7 @@ The capacity of a network can affect its performance.
 
 We mentioned that when a model is too eagerly learning noise, the validation loss may start to increase during training. To prevent this, we can simply stop the training whenever it seems the validation loss isn't decreasing anymore. Interrupting the training this way is called **early stopping**.
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-14-overfitting-and-underfitting/3.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-14-overfitting-and-underfitting/3.png)<center><b>Figure 3:</b> We keep the model where the validation loss is at a minimum.</center><br> 
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-14-overfitting-and-underfitting/3.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-14-overfitting-and-underfitting/3.png)<center><b>Figure 3:</b> We keep the model where the validation loss is at a minimum.</center><br> 
 
 Once we detect that the validation loss is starting to rise again, we can reset the weights back to where the minimum occured. This ensures that the model won't continue to learn noise and overfit the data.
 
@@ -169,7 +169,7 @@ print("Minimum validation loss: {}".format(history_df['val_loss'].min()))
     2021-11-09 00:10:50.873509: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:185] None of the MLIR Optimization Passes are enabled (registered 2)
     Minimum validation loss: 0.09031068533658981
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-14-overfitting-and-underfitting/4.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-14-overfitting-and-underfitting/4.png)<br>
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-14-overfitting-and-underfitting/4.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-14-overfitting-and-underfitting/4.png)<br>
 
 
 
@@ -263,7 +263,7 @@ print("Minimum Validation Loss: {:0.4f}".format(history_df['val_loss'].min()));
 
     Minimum Validation Loss: 0.1923
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-14-overfitting-and-underfitting/5.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-14-overfitting-and-underfitting/5.png)<br>
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-14-overfitting-and-underfitting/5.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-14-overfitting-and-underfitting/5.png)<br>
 
 It's not uncommon for the curves to follow a "hockey stick" pattern like you see here. This makes the final part of training hard to see, so let's start at epoch 10 instead:
 
@@ -275,7 +275,7 @@ print("Minimum Validation Loss: {:0.4f}".format(history_df['val_loss'].min()));
 
     Minimum Validation Loss: 0.1923
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-14-overfitting-and-underfitting/6.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-14-overfitting-and-underfitting/6.png)<br>
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-14-overfitting-and-underfitting/6.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-14-overfitting-and-underfitting/6.png)<br>
 
 The gap between these curves is quite small and the validation loss never increases, so it's more likely that the network is underfitting than overfitting. It would be worth experimenting with more capacity to see if that's the case.
 
@@ -304,7 +304,7 @@ print("Minimum Validation Loss: {:0.4f}".format(history_df['val_loss'].min()));
 
     Minimum Validation Loss: 0.1934
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-14-overfitting-and-underfitting/7.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-14-overfitting-and-underfitting/7.png)<br>
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-14-overfitting-and-underfitting/7.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-14-overfitting-and-underfitting/7.png)<br>
 
 Now the validation loss begins to rise very early, while the training loss continues to decrease. This indicates that the network has begun to overfit. At this point, we would need to try something to prevent it, either by reducing the number of units or through a method like early stopping. 
 
@@ -347,7 +347,7 @@ print("Minimum Validation Loss: {:0.4f}".format(history_df['val_loss'].min()));
 
     Minimum Validation Loss: 0.1930
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-14-overfitting-and-underfitting/8.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-14-overfitting-and-underfitting/8.png)<br>
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-14-overfitting-and-underfitting/8.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-14-overfitting-and-underfitting/8.png)<br>
 
 The early stopping callback did stop the training once the network began overfitting. Moreover, by including restore_best_weights we still get to keep the model where validation loss was lowest.
 

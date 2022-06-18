@@ -30,7 +30,7 @@ For classification, what we want instead is a distance between probabilities, an
 
 
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-16-binary-classification/1.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-16-binary-classification/1.png)<center><b>Figure 1:</b> Cross-entropy penalizes incorrect probability predictions.</center><br> 
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-16-binary-classification/1.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-16-binary-classification/1.png)<center><b>Figure 1:</b> Cross-entropy penalizes incorrect probability predictions.</center><br> 
 
 
 The idea is that we want our network to predict the correct class with probability 1.0. The further away the predicted probability is from 1.0, the greater will be the cross-entropy loss.
@@ -41,7 +41,7 @@ The technical reasons we use cross-entropy are a bit subtle, but the main thing 
 
 The cross-entropy and accuracy functions both require probabilities as inputs, meaning, numbers from 0 to 1. To covert the real-valued outputs produced by a dense layer into probabilities, we attach a new kind of activation function, the **sigmoid activation**.
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-16-binary-classification/2.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-16-binary-classification/2.png)<center><b>Figure 2:</b> The sigmoid function maps real numbers into the interval [0,1] .</center><br> 
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-16-binary-classification/2.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-16-binary-classification/2.png)<center><b>Figure 2:</b> The sigmoid function maps real numbers into the interval [0,1] .</center><br> 
 
 To get the final class prediction, we define a *threshold probability*. Typically this will be 0.5, so that rounding will give us the correct class: below 0.5 means the class with label 0 and 0.5 or above means the class with label 1. A 0.5 threshold is what Keras uses by default with its [accuracy metric](https://www.tensorflow.org/api_docs/python/tf/keras/metrics/BinaryAccuracy).
 
@@ -150,9 +150,9 @@ print(("Best Validation Loss: {:0.4f}" +\
     Best Validation Accuracy: 0.7905
 
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-16-binary-classification/3.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-16-binary-classification/2.png)
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-16-binary-classification/3.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-16-binary-classification/2.png)
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-16-binary-classification/4.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-16-binary-classification/2.png)
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-16-binary-classification/4.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-16-binary-classification/2.png)
 
 
 ### Hotel Cancellations Example
@@ -236,7 +236,7 @@ The model we'll use this time will have both batch normalization and dropout lay
 
 Define a model with an architecture given by this diagram:
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-16-binary-classification/5.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-16-binary-classification/5.png)<center><b>Figure 3:</b> Diagram of a binary classifier.</center><br> 
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-16-binary-classification/5.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-16-binary-classification/5.png)<center><b>Figure 3:</b> Diagram of a binary classifier.</center><br> 
 
 ```python
 from tensorflow import keras
@@ -283,9 +283,9 @@ history_df.loc[:, ['loss', 'val_loss']].plot(title="Cross-entropy")
 history_df.loc[:, ['binary_accuracy', 'val_binary_accuracy']].plot(title="Accuracy")
 ```
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-16-binary-classification/6.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-16-binary-classification/6.png)
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-16-binary-classification/6.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-16-binary-classification/6.png)
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-16-binary-classification/7.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-16-binary-classification/7.png)<br>
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-16-binary-classification/7.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-16-binary-classification/7.png)<br>
 
 What do you think about the learning curves? Does it look like the model underfit or overfit? Was the cross-entropy loss a good stand-in for accuracy?
 

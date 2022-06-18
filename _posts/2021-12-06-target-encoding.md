@@ -66,7 +66,7 @@ where *n* is the total number of times that category occurs in the data. The par
 
     
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-06-target-encoding/1.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-06-target-encoding/1.png)
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-06-target-encoding/1.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-06-target-encoding/1.png)
 <center><b>Figure 1:</b> M-Estimates comapred.</center><br>     
 
 In the *Automobiles* dataset there are three cars with the make chevrolet. If you chose \\( m=2.0 \\), then the chevrolet category would be encoded with 60% of the average Chevrolet price plus 40% of the overall average price.    
@@ -150,7 +150,7 @@ ax.set_xlabel("Rating")
 ax.legend(labels=['Zipcode', 'Rating']);
 ```
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-06-target-encoding/2.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-06-target-encoding/2.png)
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-06-target-encoding/2.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-06-target-encoding/2.png)
 <center><b>Figure 2:</b> Movie-watchers differed enough in their ratings from zipcode to zipcode that our target encoding was able to capture useful information.</center><br>  
 
 The distribution of the encoded Zipcode feature roughly follows the distribution of the actual ratings, meaning that movie-watchers differed enough in their ratings from zipcode to zipcode that our target encoding was able to capture useful information.

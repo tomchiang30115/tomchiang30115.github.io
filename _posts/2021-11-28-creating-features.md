@@ -87,7 +87,7 @@ sns.kdeplot(accidents.WindSpeed, shade=True, ax=axs[0])
 sns.kdeplot(accidents.LogWindSpeed, shade=True, ax=axs[1]);
 ```
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-28-creating-features/1.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-28-creating-features/1.png)
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-11-28-creating-features/1.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-11-28-creating-features/1.png)
 <center><b>Figure 1:</b> Logarithmic Normalisation.</center><br>  
 
 ### Counts

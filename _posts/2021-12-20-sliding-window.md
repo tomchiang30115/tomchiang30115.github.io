@@ -16,7 +16,7 @@ In the previous two lessons, we learned about the three operations that carry ou
 The convolution and pooling operations share a common feature: they are both performed over a **sliding window**. With convolution, this "window" is given by the dimensions of the kernel, the parameter *kernel_size*. With pooling, it is the pooling window, given by *pool_size*.
 
 <br>
-[![gif](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-20-sliding-window/1.gif#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-20-sliding-window/1.gif)<br> 
+[![gif](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-20-sliding-window/1.gif#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-20-sliding-window/1.gif)<br> 
 
 There are two additional parameters affecting both convolution and pooling layers -- these are the *strides* of the window and whether to use *padding* at the image edges. The *strides* parameter says how far the window should move at each step, and the *padding* parameter describes how we handle the pixels at the edges of the input.
 
@@ -44,7 +44,7 @@ model = keras.Sequential([
 The distance the window moves at each step is called the stride. We need to specify the stride in both dimensions of the image: one for moving left to right and one for moving top to bottom. This animation shows strides $=(2, 2)$, a movement of 2 pixels each step
 
 <br>
-[![gif](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-20-sliding-window/2.gif#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-20-sliding-window/2.gif)<br> 
+[![gif](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-20-sliding-window/2.gif#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-20-sliding-window/2.gif)<br> 
 
 What effect does the stride have? Whenever the stride in either direction is greater than 1, the sliding window will skip over some of the pixels in the input at each step.
 
@@ -63,7 +63,7 @@ When we set *padding* = 'valid', the convolution window will stay entirely insid
 The alternative is to use *padding* = 'same'. The trick here is to **pad** the input with 0's around its borders, using just enough 0's to make the size of the output the same as the size of the input. This can have the effect however of diluting the influence of pixels at the borders. The animation below shows a sliding window with 'same' padding.
 
 <br>
-[![gif](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-20-sliding-window/3.gif#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-20-sliding-window/3.gif)<br> 
+[![gif](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-20-sliding-window/3.gif#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-20-sliding-window/3.gif)<br> 
 
 The VGG model we've been looking at uses *same* padding for all of its convolutional layers. Most modern convnets will use some combination of the two. (Another parameter to tune!)
 
@@ -94,7 +94,7 @@ show_kernel(kernel)
 ```
 
 <br>
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-20-sliding-window/4.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-20-sliding-window/4.png)<br> 
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-20-sliding-window/4.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-20-sliding-window/4.png)<br> 
 
 
 The VGG architecture is fairly simple. It uses convolution with strides of 1 and maximum pooling with $2×2$  windows and strides of 2. We've included a function in the *visiontools* utility script that will show us all the steps.
@@ -114,7 +114,7 @@ show_extraction(
 ```
 
 <br>
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-20-sliding-window/5.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-20-sliding-window/5.png)<br> 
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-20-sliding-window/5.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-20-sliding-window/5.png)<br> 
 
 And that works pretty well! The kernel was designed to detect horizontal lines, and we can see that in the resulting feature map the more horizontal parts of the input end up with the greatest activation.
 
@@ -135,7 +135,7 @@ show_extraction(
 ```
 
 <br>
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-20-sliding-window/6.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-20-sliding-window/6.png)<br> 
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-20-sliding-window/6.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-20-sliding-window/6.png)<br> 
 
 
 This seems to reduce the quality of the feature extracted. Our input circle is rather "finely detailed," being only 1 pixel wide. A convolution with strides of 3 is too coarse to produce a good feature map from it.
@@ -194,7 +194,7 @@ plt.show()
 ```
 
 <br>
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-20-sliding-window/7.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-20-sliding-window/7.png)<br> 
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-20-sliding-window/7.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-20-sliding-window/7.png)<br> 
 
 
 To choose one to experiment with, just enter it's name in the appropriate place below. Then, set the parameters for the window computation. Try out some different combinations and see what they do!
@@ -223,7 +223,7 @@ visiontools.show_extraction(
 ```
 
 <br>
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-20-sliding-window/8.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-20-sliding-window/8.png)<br> 
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-20-sliding-window/8.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-20-sliding-window/8.png)<br> 
 
 
 ### The Receptive Field
@@ -235,7 +235,7 @@ As we've seen, if your first layer is a convolution with $3×3$ kernels, then ea
 What happens if you add another convolutional layer with $3×3$ kernels? Consider this next illustration:
 
 <br>
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-20-sliding-window/9.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-20-sliding-window/9.png)<br> 
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-20-sliding-window/9.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-20-sliding-window/9.png)<br> 
 
 Now trace back the connections from the neuron at top and you can see that it's connected to a $5×5$ patch of pixels in the input (the bottom layer): each neuron in the $3×3$ patch in the middle layer is connected to a $3×3$ input patch, but they overlap in a $5×5$ patch. So that neuron at top has a $5×5$ receptive field.
 
@@ -271,7 +271,7 @@ machinelearning.plot();
 ```
 
 <br>
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-20-sliding-window/10.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-20-sliding-window/10.png)<br> 
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-20-sliding-window/10.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-20-sliding-window/10.png)<br> 
 
 What about the kernels? Images are two-dimensional and so our kernels were 2D arrays. A time-series is one-dimensional, so what should the kernel be? A 1D array! Here are some kernels sometimes used on time-series data:
 
@@ -313,7 +313,7 @@ machinelearning_filtered.plot();
 ```
 
 <br>
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-20-sliding-window/11.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-20-sliding-window/11.png)<br> 
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-20-sliding-window/11.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-20-sliding-window/11.png)<br> 
 
 In fact, the *detrend* kernel filters for changes in the series, while *average* and *spencer* are both "smoothers" that filter for low-frequency components in the series.
 

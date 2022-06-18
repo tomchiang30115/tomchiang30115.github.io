@@ -30,14 +30,14 @@ A *MaxPool2D* layer is much like a *Conv2D* layer, except that it uses a simple 
 Let's take another look at the extraction figure. Remember that *MaxPool2D* is the **Condense** step.
 
 <br>
-[![jpeg](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-19-maximum-pooling/1.jpeg#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-19-maximum-pooling/1.jpeg)<br> 
+[![jpeg](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-19-maximum-pooling/1.jpeg#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-19-maximum-pooling/1.jpeg)<br> 
 
 Notice that after applying the ReLU function (**Detect**) the feature map ends up with a lot of "dead space," that is, large areas containing only 0's (the black areas in the image). Having to carry these 0 activations through the entire network would increase the size of the model without adding much useful information. Instead, we would like to condense the feature map to retain only the most useful part -- the feature itself.
 
 This in fact is what **maximum pooling**2 does. Max pooling takes a patch of activations in the original feature map and replaces them with the maximum activation in that patch.
 
 <br>
-[![jpeg](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-19-maximum-pooling/2.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-19-maximum-pooling/2.png)<br> 
+[![jpeg](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-19-maximum-pooling/2.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-19-maximum-pooling/2.png)<br> 
 
 When applied after the ReLU activation, it has the effect of "intensifying" features. The pooling step increases the proportion of active pixels to zero pixels.
 
@@ -103,7 +103,7 @@ plt.show();
 ```
 
 <br>
-[![jpeg](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-19-maximum-pooling/3.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-19-maximum-pooling/3.png)<br> 
+[![jpeg](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-19-maximum-pooling/3.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-19-maximum-pooling/3.png)<br> 
 
 We'll use another one of the functions in **tf.nn** to apply the pooling step, **tf.nn.pool**. This is a Python function that does the same thing as the *MaxPool2D* layer you use when model building, but, being a simple function, is easier to use directly.
 
@@ -125,7 +125,7 @@ plt.show();
 ```
 
 <br>
-[![jpeg](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-19-maximum-pooling/4.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-19-maximum-pooling/4.png)<br> 
+[![jpeg](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-19-maximum-pooling/4.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-19-maximum-pooling/4.png)<br> 
 
 Pretty cool! Hopefully you can see how the pooling step was able to intensify the feature by condensing the image around the most active pixels.
 
@@ -136,14 +136,14 @@ We called the zero-pixels "unimportant". Does this mean they carry no informatio
 Watch what happens when we repeatedly apply maximum pooling to the following feature map.
 
 <br>
-[![jpeg](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-19-maximum-pooling/5.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-19-maximum-pooling/5.png)<br> 
+[![jpeg](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-19-maximum-pooling/5.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-19-maximum-pooling/5.png)<br> 
 
 The two dots in the original image became indistinguishable after repeated pooling. In other words, pooling destroyed some of their positional information. Since the network can no longer distinguish between them in the feature maps, it can't distinguish them in the original image either: it has become *invariant* to that difference in position.
 
 In fact, pooling only creates translation invariance in a network over *small distances*, as with the two dots in the image. Features that begin far apart will remain distinct after pooling; only some of the positional information was lost, but not all of it.
 
 <br>
-[![jpeg](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-19-maximum-pooling/6.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-19-maximum-pooling/6.png)<br> 
+[![jpeg](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-19-maximum-pooling/6.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-19-maximum-pooling/6.png)<br> 
 
 This invariance to small differences in the positions of features is a nice property for an image classifier to have. Just because of differences in perspective or framing, the same kind of feature might be positioned in various parts of the original image, but we would still like for the classifier to recognize that they are the same. Because this invariance is built into the network, we can get away with using much less data for training: we no longer have to teach it to ignore that difference. This gives convolutional networks a big efficiency advantage over a network with only dense layers. 
 
@@ -210,7 +210,7 @@ plt.show();
 ```
 
 <br>
-[![jpeg](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-19-maximum-pooling/7.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-19-maximum-pooling/7.png)<br> 
+[![jpeg](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-19-maximum-pooling/7.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-19-maximum-pooling/7.png)<br> 
 
 ### Apply Pooling to Condense
 
@@ -238,7 +238,7 @@ plt.show();
 ```
 
 <br>
-[![jpeg](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-19-maximum-pooling/8.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-19-maximum-pooling/8.png)<br> 
+[![jpeg](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-19-maximum-pooling/8.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-19-maximum-pooling/8.png)<br> 
 
 We learned about how MaxPool2D layers give a convolutional network the property of translation invariance over small distances. In this exercise, you'll have a chance to observe this in action.
 
@@ -274,7 +274,7 @@ for i in range(REPEATS):
     2021-12-11 23:29:56.002157: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:185] None of the MLIR Optimization Passes are enabled (registered 2)
 
 <br>
-[![jpeg](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-19-maximum-pooling/9.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-19-maximum-pooling/9.png)<br> 
+[![jpeg](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-19-maximum-pooling/9.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-19-maximum-pooling/9.png)<br> 
 
 ### Explore Invariance
 
@@ -327,7 +327,7 @@ plt.show();
 ```
 
 <br>
-[![jpeg](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-19-maximum-pooling/10.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-19-maximum-pooling/10.png)<br> 
+[![jpeg](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-19-maximum-pooling/10.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-19-maximum-pooling/10.png)<br> 
 
 Since each of the 5×5 feature maps was reduced to a single value, global pooling reduced the number of parameters needed to represent these features by a factor of 25 -- a substantial savings!
 
@@ -394,7 +394,7 @@ plt.show();
 ```
 
 <br>
-[![jpeg](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-19-maximum-pooling/11.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-19-maximum-pooling/11.png)<br> 
+[![jpeg](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-19-maximum-pooling/11.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-19-maximum-pooling/11.png)<br> 
 
 ### Understand the Pooled Features
 

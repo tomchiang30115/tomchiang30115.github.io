@@ -15,7 +15,7 @@ Kaggle has a cool dataset of the Seattle Public Library's catalog. Each item has
 
 Using what I learned in my NLP course last semester, I used one method of building word vectors to make vectors representing library catalog subjects. When I plot them I get something like this:
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-26-library-catalog-subject/2018-05-16-labeled-plot.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-26-library-catalog-subject/2018-05-16-labeled-plot.png)
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-11-26-library-catalog-subject/2018-05-16-labeled-plot.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-11-26-library-catalog-subject/2018-05-16-labeled-plot.png)
 
 ### Motivation
 
@@ -495,7 +495,7 @@ plt.show()
 
 
     
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-26-library-catalog-subject/output_34_0.png)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-26-library-catalog-subject/output_34_0.png)
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-11-26-library-catalog-subject/output_34_0.png)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-11-26-library-catalog-subject/output_34_0.png)
     
 
 
@@ -544,7 +544,7 @@ plt.show()
 
 
     
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-26-library-catalog-subject/output_37_0.png)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-26-library-catalog-subject/output_37_0.png)
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-11-26-library-catalog-subject/output_37_0.png)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-11-26-library-catalog-subject/output_37_0.png)
     
 
 

@@ -23,7 +23,7 @@ In the last lesson we talked about how overfitting is caused by the network lear
 
 This is the idea behind dropout. To break up these conspiracies, we randomly drop out some fraction of a layer's input units every step of training, making it much harder for the network to learn those spurious patterns in the training data. Instead, it has to search for broad, general patterns, whose weight patterns tend to be more robust.
 
-[![gif](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-15-dropout-and-batch-normalization/1.gif#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-15-dropout-and-batch-normalization/1.gif)<center><b>Figure 1:</b> Here, 50% dropout has been added between the two hidden layers.</center><br> 
+[![gif](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-15-dropout-and-batch-normalization/1.gif#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-15-dropout-and-batch-normalization/1.gif)<center><b>Figure 1:</b> Here, 50% dropout has been added between the two hidden layers.</center><br> 
 
 You could also think about dropout as creating a kind of ensemble of networks. The predictions will no longer be made by one big network, but instead by a committee of smaller networks. Individuals in the committee tend to make different kinds of mistakes, but be right at the same time, making the committee as a whole better than any individual. (If you're familiar with random forests as an ensemble of decision trees, it's the same idea.)
 
@@ -138,7 +138,7 @@ history_df = pd.DataFrame(history.history)
 history_df.loc[:, ['loss', 'val_loss']].plot();
 ```
 
-[![gif](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-15-dropout-and-batch-normalization/2.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-15-dropout-and-batch-normalization/2.png)
+[![gif](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-15-dropout-and-batch-normalization/2.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-15-dropout-and-batch-normalization/2.png)
 
 You'll typically get better performance if you standardize your data before using it for training. That we were able to use the raw data at all, however, shows how effective batch normalization can be on more difficult datasets.
 
@@ -233,7 +233,7 @@ print("Minimum Validation Loss: {:0.4f}".format(history_df['val_loss'].min()))
 
     Minimum Validation Loss: 0.1985
 
-[![gif](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-15-dropout-and-batch-normalization/3.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-15-dropout-and-batch-normalization/3.png)
+[![gif](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-15-dropout-and-batch-normalization/3.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-15-dropout-and-batch-normalization/3.png)
 
 From the learning curves, you can see that the validation loss remains near a constant minimum even though the training loss continues to decrease. So we can see that adding dropout did prevent overfitting this time. Moreover, by making it harder for the network to fit spurious patterns, dropout may have encouraged the network to seek out more of the true patterns, possibly improving the validation loss some as well).
 
@@ -292,7 +292,7 @@ print(("Minimum Validation Loss: {:0.4f}").format(history_df['val_loss'].min()))
 
 Trying to train this network on this dataset will usually fail. Even when it does converge (due to a lucky weight initialization), it tends to converge to a very large number.
 
-[![gif](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-15-dropout-and-batch-normalization/4.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-15-dropout-and-batch-normalization/4.png)
+[![gif](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-15-dropout-and-batch-normalization/4.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-15-dropout-and-batch-normalization/4.png)
 
 Batch normalization can help correct problems like this.
 
@@ -334,6 +334,6 @@ print(("Minimum Validation Loss: {:0.4f}").format(history_df['val_loss'].min()))
     Minimum Validation Loss: 4.1072
 
 
-[![gif](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-15-dropout-and-batch-normalization/5.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-15-dropout-and-batch-normalization/5.png)
+[![gif](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-15-dropout-and-batch-normalization/5.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-15-dropout-and-batch-normalization/5.png)
 
 You can see that adding batch normalization was a big improvement on the first attempt! By adaptively scaling the data as it passes through the network, batch normalization can let you train models on difficult datasets.

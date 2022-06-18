@@ -42,7 +42,7 @@ sum(SHAP values for all features) = pred_for_team - pred_for_baseline_values
 That is, the SHAP values of all features sum up to explain why my prediction was different from the baseline. This allows us to decompose a prediction in a graph like this:
 
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-09-shap-values/1.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-09-shap-values/1.png)<br>
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-09-shap-values/1.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-09-shap-values/1.png)<br>
 
 
 
@@ -290,7 +290,7 @@ pdp.pdp_plot(my_pdp, feature_name)
 plt.show()
 ```
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-09-shap-values/2.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-09-shap-values/2.png)
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-09-shap-values/2.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-09-shap-values/2.png)
 
 ```python
 from matplotlib import pyplot as plt
@@ -305,7 +305,7 @@ pdp.pdp_plot(my_pdp, feature_name)
 plt.show()
 ```
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-09-shap-values/3.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-09-shap-values/3.png)
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-09-shap-values/3.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-09-shap-values/3.png)
 
 
 Woah! It seems like *time_in_hospital* doesn't matter at all. The difference between the lowest value on the partial dependence plot and the highest value is about 5%.
@@ -325,7 +325,7 @@ all_train.groupby(['time_in_hospital']).mean().readmitted.plot()
 plt.show()
 ```
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-09-shap-values/4.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-09-shap-values/4.png)
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-09-shap-values/4.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-09-shap-values/4.png)
 
 Now the doctors are convinced you have the right data, and the model overview looked reasonable. It's time to turn this into a finished product they can use. Specifically, the hospital wants you to create a function *patient_risk_factors* that does the following
 
@@ -348,4 +348,4 @@ def patient_risk_factors(model, patient_data):
 patient_risk_factors(my_model, sample_data_for_prediction)
 ```
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-09-shap-values/5.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-09-shap-values/5.png)
+[![png](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-09-shap-values/5.png#center)](https://raw.githubusercontent.com/tomchiang30115/tomchiang30115.github.io/main/_posts/2021-12-09-shap-values/5.png)
