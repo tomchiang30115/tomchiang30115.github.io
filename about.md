@@ -14,10 +14,10 @@ change contentid, content url, and metadata name.
 <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
 <script type="text/javascript">
 	document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
-		var adobeDCView = new AdobeDC.View({clientId: "3e66a9482764407187a81a0bf601400a", divId: "adobe-dc-view"});
+		var adobeDCView = new AdobeDC.View({clientId: "51281b1df27747569761de9c077c29a2", divId: "adobe-dc-view"});
 		adobeDCView.previewFile({
-			content:{location: {url: "https://tomchiang30115.github.io/pdf/Thomas-Chiang-CV-v5.0.pdf"}},
-			metaData:{fileName: "Thomas-Chiang-CV-v5.0.pdf"}
+			content:{location: {url: "https://tomchiang30115.github.io/pdf/Thomas-Chiang-CV-DS.pdf"}},
+			metaData:{fileName: "Thomas-Chiang-CV-DS.pdf"}
 		}, {embedMode: "IN_LINE"});
 	});
 </script>
