@@ -20,9 +20,11 @@ permalink: /blog/:title/
 This is a group project I did in reinforcement learning module, where I worked with 5 other members to create this deep reinforcement learning algorithm that plays the game Super Mario Bros by itself. The report is displayed below.
 
 <br>
-[![mp4]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.mp4#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.mp4)
-{% assign counter = counter | plus: 1 %} 
-<br>
+<video autoplay loop muted playsinline>
+<source src="https://tomchiang30115.github.io/_post_/2022-06-18-DDQN-mario/2.mp4#center" type="video/mp4" style="text-align:center;">
+</video>
+<br><center>A fully trained DDQN agent.</center>
+
 
 <div id="adobe-dc-view" style="width: 100%;"></div>
 <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
