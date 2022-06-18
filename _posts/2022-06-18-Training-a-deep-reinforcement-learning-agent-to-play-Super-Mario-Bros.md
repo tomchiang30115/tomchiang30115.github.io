@@ -13,7 +13,7 @@ permalink: /blog/:title/
 {% assign filename = page.title | remove: " -" | replace: " ", "-" | downcase %}
 
 <br>
-[![jpg]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.jpg#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.jpg)
+[![jpeg]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.jpeg#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.jpeg)
 {% assign counter = counter | plus: 1 %} 
 <br>
 
@@ -21,9 +21,9 @@ This is a group project I did in reinforcement learning module, where I worked w
 
 <br>
 <video autoplay loop muted playsinline>
-<source src="https://tomchiang30115.github.io/_post_/2022-06-18-DDQN-mario/2.mp4#center" type="video/mp4" style="text-align:center;">
-</video>
-<br><center>A fully trained DDQN agent.</center>
+<source src="https://tomchiang30115.github.io/_post_/2022-06-18-DDQN-mario/2.webm#center" type="video/webm", style="text-align:center;">
+<source src="https://tomchiang30115.github.io/_post_/2022-06-18-DDQN-mario/2.mp4#center" type="video/mp4" style="text-align:center;"></video>
+<br><center>The fully trained DDQN agent.</center>
 
 
 <div id="adobe-dc-view" style="width: 100%;"></div>
