@@ -18,7 +18,7 @@ mathjax: false
 #     - 
 
 ---
-> Have a look around the page
+> Welcome to my portfolio! Have a look around to see my previous projects...
 
 <!-- {% include accordion.html %} -->
 
