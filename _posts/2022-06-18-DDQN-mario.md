@@ -12,6 +12,18 @@ permalink: /blog/:title/
 {% assign date = page.date | date: "%Y-%m-%d" %}
 {% assign filename = page.title | remove: " -" | replace: " ", "-" | downcase %}
 
+<br>
+[![mp4]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.mp4#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.mp4)
+{% assign counter = counter | plus: 1 %} 
+<br>
+
+
+<br>
+[![jpeg]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.jpeg#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.jpeg)
+{% assign counter = counter | plus: 1 %} 
+<br>
+
+
 <div id="adobe-dc-view" style="width: 100%;"></div>
 <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
 <script type="text/javascript">
@@ -27,10 +39,6 @@ permalink: /blog/:title/
 
 <!-- A **model card** is a short document that provides key information about a machine learning model. Model cards increase transparency by communicating information about trained models to broad audiences.
 
-<br>
-[![jpeg]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.jpeg#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.jpeg)
-{% assign counter = counter | plus: 1 %} 
-<br>
 
 ### Model cards
 
