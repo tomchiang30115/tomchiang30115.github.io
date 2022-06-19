@@ -19,12 +19,6 @@ permalink: /blog/:title/
 
 This is a group project I did in reinforcement learning module, where I worked with 5 other members to create this deep reinforcement learning algorithm that plays the game Super Mario Bros by itself. The report is displayed below.
 
-<br>
-[![webm]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.webm#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.webm)
-{% assign counter = counter | plus: 1 %} 
-<br><center>The fully trained DDQN agent.</center>
-
-
 <div id="adobe-dc-view" style="width: 100%;"></div>
 <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
 <script type="text/javascript">
