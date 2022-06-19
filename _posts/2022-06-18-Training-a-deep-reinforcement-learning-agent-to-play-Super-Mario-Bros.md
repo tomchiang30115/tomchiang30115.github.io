@@ -20,7 +20,7 @@ permalink: /blog/:title/
 This is a group project I did in reinforcement learning module, where I worked with 5 other members to create this deep reinforcement learning algorithm that plays the game Super Mario Bros by itself. The report is displayed below.
 
 <br>
-[![mp4]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.mp4#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.mp4)
+[![webm]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.webm#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.webm)
 {% assign counter = counter | plus: 1 %} 
 <br><center>The fully trained DDQN agent.</center>
 
